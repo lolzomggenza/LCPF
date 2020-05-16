@@ -9,9 +9,7 @@ function App() {
             <Route
                 path="/"
                 exact
-                render={() => <Main 
-                    
-                />}
+                render={() => <Main />}
             />
         </Switch>
     );

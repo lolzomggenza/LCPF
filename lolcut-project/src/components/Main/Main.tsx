@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styled from './Styled';
+import { Header } from '../Header';
+
+
 
 interface Props {
 
@@ -8,7 +11,7 @@ interface Props {
 const Main: React.FC<Props> = () => {
     return (
         <Styled.Main>
-            
+            <Header />
         </Styled.Main>
     )
 }
