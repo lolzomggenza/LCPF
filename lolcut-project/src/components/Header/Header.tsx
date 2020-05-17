@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     }, [focusNav]);
 
     return (
-        <Styled.Header>
+        <Styled.Header focusNav={focusNav}>
             <header>
                 <Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198 97"><g id="그룹_1" data-name="그룹 1"><text id="lcplog" fill="#343a40" fontFamily="SegoeUI, Segoe UI"><tspan x="0" y="54">LCP.BLOG</tspan></text></g></svg>

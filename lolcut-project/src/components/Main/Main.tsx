@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as Styled from './Styled';
 import { Header } from '../../components';
 
@@ -9,25 +9,36 @@ type Circle = {
 };
 
 const Main: React.FC = () => {
+    const circleRef = useRef<SVGCircleElement | null>(null);
+    const [circleRound, setCircleRound] = useState<number>(0);
     const [circle, setCircle] = useState<Circle[]>([
         {
             type: "Blog",
-            percent: 50, 
+            percent: 50,
             color: "#00FCA3"
         }, {
             type: "Algorithm",
-            percent: 20, 
+            percent: 20,
             color: "#1A99AA"
         }, {
             type: "Github",
-            percent: 70, 
+            percent: 70,
             color: "#ECD06F"
         }, {
             type: "Personal_Study",
-            percent: 100, 
+            percent: 10,
             color: "#DF6C4F"
         },
     ]);
+
+    const calcRound = () => {
+        const result: number = circleRef.current?.getTotalLength() || 0;
+        setCircleRound(result);
+    };
+
+    useEffect(() => {
+        calcRound();
+    }, []);
 
     return (
         <Styled.Main>
@@ -35,27 +46,20 @@ const Main: React.FC = () => {
             <main>
                 {circle.map((data: Circle, i: number) => {
                     return (
-                        <div key={i}>
+                        <Styled.CircleWrap percent={data.percent} circleRound={circleRound} key={i}>
                             <svg>
-                                <circle
-                                    r={50}
-                                    cx={75}
-                                    cy={75}
+                                <circle r="50" cx="75" cy="75"
                                     stroke={data.color}
-                                    strokeOpacity={0.5}
+                                    strokeOpacity={0.3}
                                 />
-                                <circle
-                                    r={50}
-                                    cx={75}
-                                    cy={75}
+                                <circle r="50" cx="75" cy="75"
                                     stroke={data.color}
-                                    strokeDasharray={188}
-                                    strokeDashoffset={188 - (188 * data.percent) / 100} 
+                                    ref={circleRef}
                                 />
-                                <h2>{data.percent}%</h2>
-                                <p>{data.type}</p>
                             </svg>
-                        </div>
+                            <h2>{data.percent}%</h2>
+                            <p>{data.type}</p>
+                        </Styled.CircleWrap>
                     )
                 })}
             </main>
