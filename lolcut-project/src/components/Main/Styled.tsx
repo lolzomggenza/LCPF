@@ -67,7 +67,7 @@ export const Main = styled.div`
 
 const smoothCircle = (circleRound: number, percent: number) => keyframes`
     from {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: ${circleRound};
     }
     to {
         stroke-dashoffset: ${(circleRound - (circleRound * percent) / 100)};

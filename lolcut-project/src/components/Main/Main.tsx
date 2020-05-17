@@ -5,30 +5,26 @@ import { Header } from '../../components';
 type Circle = {
     type: string;
     percent: number;
-    color: string;
 };
 
 const Main: React.FC = () => {
+    const color: string[] = ["#00FCA3", "#1A99AA", "#ECD06F", "#DF6C4F"];
     const circleRef = useRef<SVGCircleElement | null>(null);
     const [circleRound, setCircleRound] = useState<number>(0);
     const [circle, setCircle] = useState<Circle[]>([
         {
             type: "Blog",
             percent: 50,
-            color: "#00FCA3"
         }, {
             type: "Algorithm",
             percent: 20,
-            color: "#1A99AA"
         }, {
             type: "Github",
             percent: 70,
-            color: "#ECD06F"
         }, {
             type: "Personal_Study",
             percent: 10,
-            color: "#DF6C4F"
-        },
+        }   
     ]);
 
     const calcRound = () => {
@@ -49,11 +45,11 @@ const Main: React.FC = () => {
                         <Styled.CircleWrap percent={data.percent} circleRound={circleRound} key={i}>
                             <svg>
                                 <circle r="50" cx="75" cy="75"
-                                    stroke={data.color}
+                                    stroke={color[i]}
                                     strokeOpacity={0.3}
                                 />
                                 <circle r="50" cx="75" cy="75"
-                                    stroke={data.color}
+                                    stroke={color[i]}
                                     ref={circleRef}
                                 />
                             </svg>
