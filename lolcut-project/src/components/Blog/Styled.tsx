@@ -10,7 +10,7 @@ export const BlogMain = styled.div`
         .post-wrapper {
             padding: 5% 5.3% 10% 5%;
             display: flex;
-            width: 72%;
+            width: 80%;
             flex-wrap: wrap;
             > div {
                 padding: 0 0.81% 3%; 0;
