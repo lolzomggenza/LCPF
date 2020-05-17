@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import { Main } from './components';
+import { Main, Header, Card } from './components';
 import './App.css';
 
 function App() {
@@ -10,6 +10,10 @@ function App() {
                 path="/"
                 exact
                 render={() => <Main />}
+            />
+            <Route
+                path="/card"
+                render={() => <Card />}
             />
         </Switch>
     );
