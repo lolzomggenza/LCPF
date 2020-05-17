@@ -43,6 +43,7 @@ export const Card = styled.div`
             }
             .sub-title {
                 font-size: 14px;
+                color: #495057;
                 padding: 0 15px 0 10px;
                 margin: 0;
                 line-height: 20px;
@@ -70,9 +71,11 @@ export const Card = styled.div`
             align-items: center;
             > span {
                 padding: 0 0 0 12px;
-                font-size: 13px;
+                font-size: 12px;
+                font-weight: 100;
             }
         }
         border-radius: 0px 0px 4px 4px;
+        box-shadow: 5px 5px 20px -12px gray;
     }
 `;

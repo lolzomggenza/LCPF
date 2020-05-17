@@ -17,7 +17,7 @@ const Card: React.FC = () => {
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "재민이가 씀"
+            writer: "by 유재민"
         }
     );
 
