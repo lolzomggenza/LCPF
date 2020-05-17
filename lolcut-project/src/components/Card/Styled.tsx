@@ -5,7 +5,6 @@ export const Card = styled.div`
     width: 20rem;
     height: 22rem;
     flex-direction: column;
-    border-radius: 4px;
 
     > a.img-wrapper {
         width: 100%;
@@ -21,6 +20,7 @@ export const Card = styled.div`
                 height: 100%;
                 display: block;
                 object-fit: cover;
+                border-radius: 4px 4px 0px 0px;
             }
         }
     }
@@ -69,5 +69,6 @@ export const Card = styled.div`
                 font-size: 13px;
             }
         }
+        border-radius: 0px 0px 4px 4px;
     }
 `;
