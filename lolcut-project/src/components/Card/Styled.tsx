@@ -5,6 +5,7 @@ export const Card = styled.div`
     width: 20rem;
     height: 22rem;
     flex-direction: column;
+    border-radius: 4px;
 
     > a.img-wrapper {
         width: 100%;
