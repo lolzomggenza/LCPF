@@ -1,48 +1,62 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import * as Styled from './Styled';
 import { Header, Card } from '../../components';
 
+type Card = {
+    imgSrc: string;
+    title: string;
+    subTitle: string;
+    date: string;
+    writer: string;
+}
 
 const Blog: React.FC = () => {
+    const [cardInfo, setCardInfo] = useState<Card[]>([
+        {
+            imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
+            title: "✏️ 안녕하세요",
+            subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
+            date: "2020년 5월 17일",
+            writer: "by 유재민"
+        }, {
+            imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
+            title: "✏️ 안녕하세요",
+            subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
+            date: "2020년 5월 17일",
+            writer: "by 유재민"
+        }, {
+            imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
+            title: "✏️ 안녕하세요",
+            subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
+            date: "2020년 5월 17일",
+            writer: "by 유재민"
+        }, {
+            imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
+            title: "✏️ 안녕하세요",
+            subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
+            date: "2020년 5월 17일",
+            writer: "by 유재민"
+        }, 
+    ])
 
     return (
         <Styled.BlogMain>
             <Header />
             <main>
                 <div className="post-wrapper">
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
-                    <div>
-                        <Card />
-                    </div>
+                    {cardInfo.map((card: Card, i: number) => {
+                        return (
+                            <div>
+                                <Card
+                                    imgSrc={card.imgSrc}
+                                    title={card.title}
+                                    subTitle={card.subTitle}
+                                    date={card.date}
+                                    writer={card.writer}
+                                />
+                            </div>
+                        )
+                    })}
                 </div>
                 <aside>
                     <div>
