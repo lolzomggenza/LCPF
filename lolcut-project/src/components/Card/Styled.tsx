@@ -3,15 +3,17 @@ import styled from "styled-components";
 export const Card = styled.div`
     display: flex;
     width: 20rem;
-    height: 22rem;
+    height: 24rem;
     flex-direction: column;
+    background-color: #f8f9fa;
 
     > a.img-wrapper {
         width: 100%;
-        height: 45%;
+        height: 42%;
         > div {
             position: relative;
             padding-top: 50%;
+            background-color: #f8f9fa;
             > img {
                 position: absolute;
                 top: 0px;
@@ -27,14 +29,15 @@ export const Card = styled.div`
     > div.title-wrapper {
         display: flex;
         width: 100%;
-        height: 45%;
+        height: 48%;
         flex-direction: column;
+        background-color: white;
         > a {
             display: flex;
             flex-direction:column;
             height: 80%;
             .title {
-                padding: 25px 0 10px 13px;
+                padding: 18px 0 10px 13px;
                 font-size: 16px;
                 font-weight: bold;
             }
@@ -59,6 +62,7 @@ export const Card = styled.div`
     > div.sub-information-wrapper {
         width: 100%;
         height: 10%;
+        background-color: white;
         > a {
             width: 100%;
             height: 100%;
