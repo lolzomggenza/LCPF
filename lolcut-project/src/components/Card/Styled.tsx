@@ -3,21 +3,16 @@ import styled from "styled-components";
 export const Card = styled.div`
     display: flex;
     width: 20rem;
-    height: 24rem;
     flex-direction: column;
     background-color: #f8f9fa;
-
+    transition: transform 0.5s;
+    &:hover {
+        transform: translateY(-1rem);
+    }
     > a.img-wrapper {
         width: 100%;
-        height: 42%;
         > div {
-            position: relative;
-            padding-top: 50%;
-            background-color: #f8f9fa;
             > img {
-                position: absolute;
-                top: 0px;
-                left: 0px;
                 width: 100%;
                 height: 100%;
                 display: block;
@@ -28,9 +23,10 @@ export const Card = styled.div`
     }
     > div.title-wrapper {
         display: flex;
+        flex-direction: column;
         width: 100%;
         height: 48%;
-        flex-direction: column;
+        padding: 0.5rem 0;
         background-color: white;
         > a {
             display: flex;
@@ -63,6 +59,7 @@ export const Card = styled.div`
     > div.sub-information-wrapper {
         width: 100%;
         height: 10%;
+        padding: 0.5rem 0;
         background-color: white;
         > a {
             width: 100%;

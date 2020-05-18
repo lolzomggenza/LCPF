@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 export const BlogMain = styled.div`
     > main {
+        position: relative;
         display: flex;
         width: 100%;
         height: 100%;
+        margin: auto;
+        padding-top: 2rem;
         background-color: #f8f9fa;
-
         .post-wrapper {
-            padding: 5% 5.3% 10% 5%;
+            flex: 1;
             display: flex;
-            width: 80%;
             flex-wrap: wrap;
             > div {
-                padding: 0 0.81% 3%; 0;
+                padding: 1rem;
             }
         }
         .line {
@@ -21,13 +22,9 @@ export const BlogMain = styled.div`
             height: 1px;
         }
         > aside {
-            position: fixed;
-            left: 81%;
+            right: 0;
             display: flex;
-            width: 13%;
-            height: 900px;
-            align-items: center;
-
+            width: 12rem;
             > div {
                 width: 100%;
                 height: 78%;
@@ -68,6 +65,49 @@ export const BlogMain = styled.div`
                     }
                 }
             }
+        }
+    }
+    @media all and (max-width: 788px) { /* 화면이 768이하일 때 적용 될 스타일 */
+        > main {
+            min-width: 400px;
+            .post-wrapper {
+                justify-content: center;
+            }
+            .card-wrapper {
+                width: auto;
+            }
+            aside {
+                display: none;
+            }
+        }
+    }
+    @media all and (min-width: 789px) and (max-width: 1024px) {
+        > main {
+            width: 788px;
+            .post-wrapper {
+                justify-content: center;
+            }
+            .card-wrapper {
+                width: auto;
+            }
+            aside {
+                display: none;
+            }
+        }
+    }
+    @media all and (min-width: 1025px) and (max-width: 1326px) {
+        > main {
+            width: 1024px;
+        }   
+    }
+    @media all and (min-width: 1327px) and (max-width: 1732px) {
+        > main {
+            width: 1326px;
+        }
+    }
+    @media all and (min-width: 1733px) {
+        > main {
+            width: 1732px;
         }
     }
 `;
