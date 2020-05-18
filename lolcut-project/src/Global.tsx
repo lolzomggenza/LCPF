@@ -1,5 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
+interface GlobalProps {
+    pathname: string;
+}
+
 export const Global = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
     * {
@@ -7,6 +11,7 @@ export const Global = createGlobalStyle`
     }
     body {
         background-color: #F8F9FA;
+        overflow: ${(p: GlobalProps) => p.pathname === "/post" ? "hidden" : "auto"};
     }
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
