@@ -9,6 +9,7 @@ type Card = {
     subTitle: string;
     date: string;
     writer: string;
+    link: string;
 }
 
 type Notice = {
@@ -29,32 +30,37 @@ const Blog: React.FC = () => {
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "by 유재민"
+            writer: "by 유재민",
+            link: "",
         }, {
             imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "by 유재민"
+            writer: "by 유재민",
+            link: "",
         }, {
             imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "by 유재민"
+            writer: "by 유재민",
+            link: "",
         }, {
             imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "by 유재민"
+            writer: "by 유재민",
+            link: "",
         }, 
         {
             imgSrc: "https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg",
             title: "✏️ 안녕하세요",
             subTitle: "안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지",
             date: "2020년 5월 17일",
-            writer: "by 유재민"
+            writer: "by 유재민",
+            link: "",
         }, 
     ])
 
@@ -117,6 +123,7 @@ const Blog: React.FC = () => {
                                     subTitle={card.subTitle}
                                     date={card.date}
                                     writer={card.writer}
+                                    link={card.link}
                                 />
                             </div>
                         )
