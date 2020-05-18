@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const Post = styled.div`
-    border: 1px solid red;
     > main {
         width: 820px;
-        margin: 4rem auto 0;
-        border: 1px solid blue;
+        margin: 4rem auto 0;    
         > div:first-child {
             h1 {
                 margin-bottom: 1rem;
