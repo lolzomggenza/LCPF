@@ -8,6 +8,7 @@ export const Header = styled.div`
     height: 4rem;
     display: flex;
     align-items: center;
+    font-family: 'Noto Sans KR';
     .line {
         background-color: #e9ecef;
         height: 1px;
@@ -36,10 +37,12 @@ export const Header = styled.div`
         height: 30px;
         padding: 0 15px 0 0;
         right: 0;
+        cursor: pointer;
         z-index: ${(p: navProps) => p.focusNav ? 100 : 100};
     }
     > nav {
-        display: ${(p: navProps) => p.focusNav ? "flex" : "none"};
+        /* display: $ {(p: navProps) => p.focusNav ? "flex" : "none"}; */
+        display: flex;
         position: absolute;
         height: 100%;
         width: 15%;
@@ -48,11 +51,12 @@ export const Header = styled.div`
         align-items: center;
         justify-content: center;
         background-color: #00000055;
-
+        transform: ${(p: navProps) => p.focusNav ? "translateX(0)" : "translateX(100%)"};
+        transition: 0.5s ease;
+        z-index: 99;
         .menu-wrapper-wrapper {
             width: 80%;
             height: 70%;
-
             .menu-wrapper {
                 padding: 0 0 40% 0;
                 > span {
