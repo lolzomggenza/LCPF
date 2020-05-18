@@ -33,8 +33,39 @@ export const Main = styled.div`
                 transform: translate(-50%, -50%);
                 font-size: 1.5rem;
             }
-            p {
+            button {
+                padding: 0.25rem 1rem;
+                border: 0;
+                border-radius: 2rem;
                 font-size: 1.25rem;
+                transition: 50ms ease-in-out;
+                outline: none;
+                cursor: pointer;
+            }
+            button:nth-child(1):hover, 
+            button:nth-child(2):hover {
+                background: red;
+                transform: translateY(0.275rem);
+            }
+        }
+        > div:nth-child(1) {
+            circle {
+                stroke: #00FCA3;
+            }
+        }
+        > div:nth-child(2) {
+            circle {
+                stroke: #1A99AA;
+            }
+        }
+        > div:nth-child(3) {
+            circle {
+                stroke: #ECD06F;
+            }
+        }
+        > div:nth-child(4) {
+            circle {
+                stroke: #DF6C4F;
             }
         }
     }

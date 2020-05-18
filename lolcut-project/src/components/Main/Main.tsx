@@ -8,7 +8,6 @@ type Circle = {
 };
 
 const Main: React.FC = () => {
-    const color: string[] = ["#00FCA3", "#1A99AA", "#ECD06F", "#DF6C4F"];
     const circleRef = useRef<SVGCircleElement | null>(null);
     const [circleRound, setCircleRound] = useState<number>(0);
     const [circle, setCircle] = useState<Circle[]>([
@@ -31,6 +30,36 @@ const Main: React.FC = () => {
         const result: number = circleRef.current?.getTotalLength() || 0;
         setCircleRound(result);
     };
+    // const apiCircle = () => {
+    //     axios request
+    //     setCircle([
+    //         ...circle,
+    //         {
+    //             // new Object
+    //         }
+    //     ])
+    // }
+
+    const circleView = () => {
+        console.log(1)
+        const view = circle.map((data: Circle, i: number) => {
+            return (
+                <Styled.CircleWrap percent={data.percent} circleRound={circleRound} key={i}>
+                    <svg>
+                        <circle r="50" cx="75" cy="75"
+                            strokeOpacity={0.3}
+                        />
+                        <circle r="50" cx="75" cy="75"
+                            ref={circleRef}
+                        />
+                    </svg>
+                    <h2>{data.percent}%</h2>
+                    <button>{data.type}</button>
+                </Styled.CircleWrap>
+            )
+        })
+        return view;
+    }
 
     useEffect(() => {
         calcRound();
@@ -40,24 +69,7 @@ const Main: React.FC = () => {
         <Styled.Main>
             <Header />
             <main>
-                {circle.map((data: Circle, i: number) => {
-                    return (
-                        <Styled.CircleWrap percent={data.percent} circleRound={circleRound} key={i}>
-                            <svg>
-                                <circle r="50" cx="75" cy="75"
-                                    stroke={color[i]}
-                                    strokeOpacity={0.3}
-                                />
-                                <circle r="50" cx="75" cy="75"
-                                    stroke={color[i]}
-                                    ref={circleRef}
-                                />
-                            </svg>
-                            <h2>{data.percent}%</h2>
-                            <p>{data.type}</p>
-                        </Styled.CircleWrap>
-                    )
-                })}
+                {circleView()}
             </main>
         </Styled.Main>
     )
