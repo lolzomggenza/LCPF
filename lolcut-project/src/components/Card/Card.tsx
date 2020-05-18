@@ -8,6 +8,7 @@ interface Props {
     subTitle: string;
     date: string;
     writer: string;
+    link: string;
 }
 
 type CardInfo = {
@@ -15,19 +16,20 @@ type CardInfo = {
     title: string;
     subTitle: string;
     date: string;
-    writer: string
+    writer: string;
+    link: string;
 };
 
-const Card: React.FC<Props> = ({ imgSrc, date, subTitle, title, writer }) => {
+const Card: React.FC<Props> = ({ imgSrc, date, subTitle, title, writer, link }) => {
     return (
-        <Styled.Card>
-            <a href="" className="img-wrapper">
+        <Styled.Card className="card-wrapper">
+            <Link to={link} className="img-wrapper">
                 <div>
                     <img src={imgSrc}/>
                 </div>
-            </a>
+            </Link>
             <div className="title-wrapper">
-                <Link to="/">
+                <Link to={link}>
                     <span className="title">{title}</span>
                     <span className="sub-title">{subTitle}</span>
                 </Link>
@@ -37,9 +39,9 @@ const Card: React.FC<Props> = ({ imgSrc, date, subTitle, title, writer }) => {
             </div>
             <div className="line"/>
             <div className="sub-information-wrapper">
-                <a href="">
+                <Link to={link}>
                     <span>{writer}</span>
-                </a>
+                </Link>
             </div>
         </Styled.Card>
     )
