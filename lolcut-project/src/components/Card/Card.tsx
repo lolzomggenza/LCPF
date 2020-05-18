@@ -2,29 +2,43 @@ import React, { useState, useCallback } from 'react';
 import * as Styled from './Styled';
 import { Link } from 'react-router-dom';
 
-const Card: React.FC = () => {
+interface Props {
+    imgSrc: string;
+    title: string;
+    subTitle: string;
+    date: string;
+    writer: string;
+}
+
+type CardInfo = {
+    imgSrc: string;
+    title: string;
+    subTitle: string;
+    date: string;
+    writer: string
+};
+
+const Card: React.FC<Props> = ({ imgSrc, date, subTitle, title, writer }) => {
     return (
         <Styled.Card>
             <a href="" className="img-wrapper">
                 <div>
-                    <img src="https://img.freepik.com/free-vector/abstract-galaxy-background_1199-247.jpg?size=626&ext=jpg"/>
+                    <img src={imgSrc}/>
                 </div>
             </a>
             <div className="title-wrapper">
-                <a href="">
-                    <span className="title">✏️ 안녕하세요</span>
-                    <span className="sub-title">안녕 안녕 나는 지수야 헬륨가스 마셨더니 요롷게 됬지
-                    ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
-                    </span>
-                </a>
+                <Link to="/">
+                    <span className="title">{title}</span>
+                    <span className="sub-title">{subTitle}</span>
+                </Link>
                 <div>
-                    <span>2020년 5월 17일</span>
+                    <span>{date}</span>
                 </div>
             </div>
             <div className="line"/>
             <div className="sub-information-wrapper">
                 <a href="">
-                    <span>재민이가 씀</span>
+                    <span>{writer}</span>
                 </a>
             </div>
         </Styled.Card>
