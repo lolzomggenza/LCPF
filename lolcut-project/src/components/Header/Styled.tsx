@@ -6,6 +6,13 @@ interface navProps {
 
 export const Header = styled.div`
     height: 4rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans KR';
+    .line {
+        background-color: #e9ecef;
+        height: 1px;
+    }
     > header {
         display: flex;
         align-items: center;
@@ -23,74 +30,49 @@ export const Header = styled.div`
                 transform: translate(-0.5rem, 1rem);
             }
         }
-        > ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background-color: #F8F9FA;
-            > * {
-                margin: 0 0.8rem;
-            }
-            .header-search {
-                padding: 0.8rem;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            .header-search:hover {
-                transition: 50ms ease;
-                background-color: #f9f9f9;
-            }
-            button {
-                width: 8rem;
-                padding: 0.5rem;
-                border: 1px solid rgb(52, 58, 64);
-                border-radius: 2rem;
-                font-weight: bold;
-                background-color: white;
-                transition: 150ms ease;
-                font-size: 0.8rem;
-                cursor: pointer;
-            }
-            button:hover {
-                color: #fff;
-                background-color: #343A40;
-            }
-            .header-user {
-                width: 5rem;
-                position: relative;
-                cursor: pointer;
-                img {
-                    width: 3rem;
-                    height: 3rem;
-                    border-radius: 50%;
+    }
+    > img {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        padding: 0 15px 0 0;
+        right: 0;
+        cursor: pointer;
+        z-index: ${(p: navProps) => p.focusNav ? 100 : 100};
+    }
+    > nav {
+        /* display: $ {(p: navProps) => p.focusNav ? "flex" : "none"}; */
+        display: flex;
+        position: absolute;
+        height: 100%;
+        width: 15%;
+        top: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        transform: ${(p: navProps) => p.focusNav ? "translateX(0)" : "translateX(100%)"};
+        transition: 0.5s ease;
+        z-index: 99;
+        .menu-wrapper-wrapper {
+            width: 80%;
+            height: 70%;
+            .menu-wrapper {
+                padding: 0 0 40% 0;
+                > span {
+                    display: block;
+                    padding: 0 0 3% 1%;
+                    font-size: 18px;
                 }
-                .header-user-nav {
-                    position: absolute;
-                    top: 4rem;
-                    left: -6rem;
-                    display: flex;
-                    box-shadow: 0 0 0.5rem #f0f0f0;
-                    background-color: white;
-                    transform: translateY(-11rem);
-                    z-index: ${(p: navProps) => p.focusNav ? 100 : -1};
-                    li {
-                        width: 8rem;
-                        padding: 1rem;
-                        cursor: pointer;
-                    }
-                    li:hover {
-                        transition: 50ms ease-in-out;
-                        background-color: #f9f9f9;
+                > ul {
+                    > a {
+                        > li {
+                            display: block;
+                            padding: 7% 0 0 1%;
+                            font-size: 15px;
+                        }
                     }
                 }
-                .focused {
-                    transform: translateY(0);
-                    transition: 0.5s;
-                }
-            }
-            .header-user:hover svg {
-                transform: scale(1.2);
-                transition: 1s;
             }
         }
     }
