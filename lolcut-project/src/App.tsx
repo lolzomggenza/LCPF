@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import { Main, Header, Card } from './components';
+import { Main, Header, Card, Blog } from './components';
 import './App.css';
 
 function App() {
@@ -14,6 +14,10 @@ function App() {
             <Route
                 path="/card"
                 render={() => <Card />}
+            />
+            <Route
+                path="/blog"
+                render={() => <Blog />}
             />
         </Switch>
     );
