@@ -22,48 +22,40 @@ export const Main = styled.div`
                     width: 100%;
                     height: 100%;
                     fill: none;
-                    stroke-width: 6px;
+                    stroke-width: 1rem;
                     stroke-linecap: round;
                 }
             }
             h2 {
-                position: absolute;
-                top: 45%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                margin-bottom: 0.5rem;
                 font-size: 1.5rem;
             }
             button {
                 padding: 0.25rem 1rem;
                 border: 0;
                 border-radius: 2rem;
-                font-size: 1.25rem;
+                font-size: 1rem;
                 transition: 50ms ease-in-out;
                 outline: none;
                 cursor: pointer;
             }
-            button:nth-child(1):hover, 
-            button:nth-child(2):hover {
-                background: red;
-                transform: translateY(0.275rem);
-            }
         }
-        > div:nth-child(1) {
+        > div:nth-child(4) {
             circle {
                 stroke: #00FCA3;
             }
         }
-        > div:nth-child(2) {
+        > div:nth-child(3) {
             circle {
                 stroke: #1A99AA;
             }
         }
-        > div:nth-child(3) {
+        > div:nth-child(2) {
             circle {
                 stroke: #ECD06F;
             }
         }
-        > div:nth-child(4) {
+        > div:nth-child(1) {
             circle {
                 stroke: #DF6C4F;
             }
