@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface navProps {
+    focusNav: boolean;
+}
+
 export const Header = styled.div`
     height: 4rem;
     > header {
@@ -8,7 +12,7 @@ export const Header = styled.div`
         justify-content: space-between;
         height: 100%;
         margin: 0 auto;
-        background-color: white;
+        background-color: #F8F9FA;
         > a svg {
             width: 6rem;
             height: 2.5rem;
@@ -23,7 +27,7 @@ export const Header = styled.div`
             display: flex;
             align-items: center;
             justify-content: space-around;
-            background-color: white;
+            background-color: #F8F9FA;
             > * {
                 margin: 0 0.8rem;
             }
@@ -42,7 +46,7 @@ export const Header = styled.div`
                 border: 1px solid rgb(52, 58, 64);
                 border-radius: 2rem;
                 font-weight: bold;
-                background-color: #f8f8f8;
+                background-color: white;
                 transition: 150ms ease;
                 font-size: 0.8rem;
                 cursor: pointer;
@@ -68,10 +72,11 @@ export const Header = styled.div`
                     box-shadow: 0 0 0.5rem #f0f0f0;
                     background-color: white;
                     transform: translateY(-11rem);
-                    z-index: -1;
+                    z-index: ${(p: navProps) => p.focusNav ? 100 : -1};
                     li {
                         width: 8rem;
                         padding: 1rem;
+                        cursor: pointer;
                     }
                     li:hover {
                         transition: 50ms ease-in-out;
@@ -91,7 +96,7 @@ export const Header = styled.div`
     }
     @media all and (max-width: 768px) { /* 화면이 768이하일 때 적용 될 스타일 */
         header {
-            width: calc(100% - 2rem);
+            min-width: 400px;
             button {
                 display: none;
             }
