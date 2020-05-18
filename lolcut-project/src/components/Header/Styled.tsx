@@ -50,7 +50,7 @@ export const Header = styled.div`
         right: 0;
         align-items: center;
         justify-content: center;
-        background-color: #00000055;
+        background-color: #ffffff;
         transform: ${(p: navProps) => p.focusNav ? "translateX(0)" : "translateX(100%)"};
         transition: 0.5s ease;
         z-index: 99;
