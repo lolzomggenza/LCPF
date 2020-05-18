@@ -22,7 +22,7 @@ type CardInfo = {
 
 const Card: React.FC<Props> = ({ imgSrc, date, subTitle, title, writer, link }) => {
     return (
-        <Styled.Card>
+        <Styled.Card className="card-wrapper">
             <Link to={link} className="img-wrapper">
                 <div>
                     <img src={imgSrc}/>
