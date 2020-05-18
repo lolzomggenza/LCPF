@@ -24,7 +24,7 @@ export const BlogMain = styled.div`
         > aside {
             right: 0;
             display: flex;
-            width: 12rem;
+            width: 15rem;
             > div {
                 width: 100%;
                 height: 78%;
