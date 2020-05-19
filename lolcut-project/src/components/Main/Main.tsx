@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as Styled from './Styled';
 import { Header } from '../../components';
+import main_h from './img/main_h.png'
+import arrow_down from './img/arrow_down.png'
+import link_img from './img/link.png'
+import summary_img from './img/summary.png'
 
 type Circle = {
     type: string;
@@ -71,6 +75,24 @@ const Main: React.FC = () => {
             <main>
                 {circleView()}
             </main>
+            <div className="page-1-arrow">
+                <img src={arrow_down} alt="arrow_down"/>
+            </div>
+            <div className="page-2-wrapper">
+                <div className="page-2-h1">
+                    <img src={main_h} alt="main_h"/>
+                </div>
+                <div className="page-2-input-wrapper-wrapper">
+                    <div className="page-2-input-wrapper">
+                        <img className="link-img" src={link_img} alt="link"/>
+                        <input type="text"/>
+                    </div>
+                    <div className="page-2-input-wrapper">
+                        <img src={summary_img} alt="summary"/>
+                        <input type="text"/>
+                    </div>
+                </div>
+            </div>
         </Styled.Main>
     )
 }
