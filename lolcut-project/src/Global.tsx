@@ -11,7 +11,7 @@ export const Global = createGlobalStyle`
     }
     body {
         background-color: #F8F9FA;
-        overflow: ${(p: GlobalProps) => p.pathname === "/post" ? "hidden" : "auto"};
+        overflow-x: ${(p: GlobalProps) => (p.pathname === "/post" || p.pathname === "/") ? "hidden" : "auto"};
     }
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,

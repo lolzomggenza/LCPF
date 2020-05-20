@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                         <div className="line"/>
                         <ul>
                             <Link to="/blog"><li>블로그 메인</li></Link>
-                            <Link to="/setting"><li>글 등록하기</li></Link>
+                            <Link to="/post"><li>글 등록하기</li></Link>
                         </ul>
                     </div>
                     <div className="menu-wrapper">

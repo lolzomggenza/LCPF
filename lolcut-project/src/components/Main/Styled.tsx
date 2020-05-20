@@ -1,4 +1,6 @@
 import styled, { keyframes } from "styled-components";
+import link_img from './img/link.png'
+import summary_img from './img/summary.png'
 
 interface CircleProps {
     circleRound: number;
@@ -11,55 +13,6 @@ export const Main = styled.div`
         flex-wrap: wrap;
         justify-content: center;
         margin: 15rem auto 17rem;
-        > div {
-            position: relative;
-            width: 150px;
-            text-align: center;
-            svg {
-                width: 150px;
-                transform: rotate(-90deg);
-                circle {
-                    width: 100%;
-                    height: 100%;
-                    fill: none;
-                    stroke-width: 1rem;
-                    stroke-linecap: round;
-                }
-            }
-            h2 {
-                margin-bottom: 0.5rem;
-                font-size: 1.5rem;
-            }
-            button {
-                padding: 0.25rem 1rem;
-                border: 0;
-                border-radius: 2rem;
-                font-size: 1rem;
-                transition: 50ms ease-in-out;
-                outline: none;
-                cursor: pointer;
-            }
-        }
-        > div:nth-child(4) {
-            circle {
-                stroke: #00FCA3;
-            }
-        }
-        > div:nth-child(3) {
-            circle {
-                stroke: #1A99AA;
-            }
-        }
-        > div:nth-child(2) {
-            circle {
-                stroke: #ECD06F;
-            }
-        }
-        > div:nth-child(1) {
-            circle {
-                stroke: #DF6C4F;
-            }
-        }
     }
     > div.page-1-arrow {
         display: flex;
@@ -110,15 +63,18 @@ export const Main = styled.div`
                     color: orange;
                     font-size: 19px;
                 }
+                > input::placeholder {
+                    font-size: 1rem;
+                }
             }
         }
     }
     @media all and (max-width: 768px) { /* 화면이 768이하일 때 적용 될 스타일 */
         main {
-            min-width: 400px;
+            width: auto;
         }
         div.page-2-wrapper {
-            min-width: 400px;
+            width: auto;
         }
     }
     @media all and (min-width: 789px) and (max-width: 1024px) {
@@ -165,11 +121,48 @@ const smoothCircle = (circleRound: number, percent: number) => keyframes`
 `
 
 export const CircleWrap = styled.div`
+    position: relative;
+    width: 150px;
+    text-align: center;
     svg {
+        width: 150px;
+        transform: rotate(-90deg);
+        circle {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke-width: 1rem;
+            stroke-linecap: round;
+        }
         circle:nth-child(2) {
             stroke-dasharray: ${(p: CircleProps) => p.circleRound};
             stroke-dashoffset: ${(p: CircleProps) => (p.circleRound - (p.circleRound * p.percent) / 100)};
             animation: ${(p: CircleProps) => smoothCircle(p.circleRound, p.percent)} 900ms ease normal forwards running;
         }
+    }
+    h2 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+    button {
+        padding: 0.25rem 1rem;
+        border: 0;
+        border-radius: 2rem;
+        font-size: 1rem;
+        transition: 50ms ease-in-out;
+        outline: none;
+        cursor: pointer;
+    }
+    &:nth-child(4) circle {
+        stroke: #00FCA3;
+    }
+    &:nth-child(3) circle {
+        stroke: #1A99AA;
+    }
+    &:nth-child(2) circle {
+        stroke: #ECD06F;
+    }
+    &:nth-child(1) circle {
+        stroke: #DF6C4F;
     }
 `;

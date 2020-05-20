@@ -41,7 +41,6 @@ export const Header = styled.div`
         z-index: ${(p: navProps) => p.focusNav ? 100 : 100};
     }
     > nav {
-        /* display: $ {(p: navProps) => p.focusNav ? "flex" : "none"}; */
         display: flex;
         position: absolute;
         height: 100%;
@@ -78,7 +77,7 @@ export const Header = styled.div`
     }
     @media all and (max-width: 768px) { /* 화면이 768이하일 때 적용 될 스타일 */
         header {
-            min-width: 400px;
+            width: auto;
             button {
                 display: none;
             }
@@ -105,8 +104,3 @@ export const Header = styled.div`
         }
     }
 `;
-
-
-
-
-// 945 768 media
