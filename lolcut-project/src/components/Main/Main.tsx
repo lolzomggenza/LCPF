@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, } from 'react';
 import * as Styled from './Styled';
 import { Header } from '../../components';
+import Circle from './components/Circle';
 import main_h from './img/main_h.png'
 import arrow_down from './img/arrow_down.png'
 import link_img from './img/link.png'
@@ -12,8 +13,6 @@ type Circle = {
 };
 
 const Main: React.FC = () => {
-    const circleRef = useRef<SVGCircleElement | null>(null);
-    const [circleRound, setCircleRound] = useState<number>(0);
     const [circle, setCircle] = useState<Circle[]>([
         {
             type: "Blog",
@@ -30,44 +29,18 @@ const Main: React.FC = () => {
         }   
     ]);
 
-    const calcRound = () => {
-        const result: number = circleRef.current?.getTotalLength() || 0;
-        setCircleRound(result);
-    };
-    // const apiCircle = () => {
-    //     axios request
-    //     setCircle([
-    //         ...circle,
-    //         {
-    //             // new Object
-    //         }
-    //     ])
-    // }
-
     const circleView = () => {
-        console.log(1)
         const view = circle.map((data: Circle, i: number) => {
             return (
-                <Styled.CircleWrap percent={data.percent} circleRound={circleRound} key={i}>
-                    <svg>
-                        <circle r="50" cx="75" cy="75"
-                            strokeOpacity={0.3}
-                        />
-                        <circle r="50" cx="75" cy="75"
-                            ref={circleRef}
-                        />
-                    </svg>
-                    <h2>{data.percent}%</h2>
-                    <button>{data.type}</button>
-                </Styled.CircleWrap>
+                <Circle 
+                    percent={data.percent}
+                    type={data.type} 
+                    key={i}
+                />
             )
         })
         return view;
     }
-
-    useEffect(() => {
-        calcRound();
-    }, []);
 
     return (
         <Styled.Main>
@@ -84,12 +57,12 @@ const Main: React.FC = () => {
                 </div>
                 <div className="page-2-input-wrapper-wrapper">
                     <div className="page-2-input-wrapper">
-                        <img className="link-img" src={link_img} alt="link"/>
-                        <input type="text"/>
+                        <img className="link-img" src={link_img} alt="link" />
+                        <input type="text" placeholder="link" />
                     </div>
                     <div className="page-2-input-wrapper">
-                        <img src={summary_img} alt="summary"/>
-                        <input type="text"/>
+                        <img src={summary_img} alt="summary" />
+                        <input type="text" placeholder="summary" />
                     </div>
                 </div>
             </div>
