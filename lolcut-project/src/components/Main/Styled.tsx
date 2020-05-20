@@ -10,7 +10,7 @@ export const Main = styled.div`
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 4rem auto 0;
+        margin: 15rem auto 17rem;
         > div {
             position: relative;
             width: 150px;
@@ -61,8 +61,63 @@ export const Main = styled.div`
             }
         }
     }
+    > div.page-1-arrow {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 10rem;
+        > img {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    > div.page-2-wrapper {
+        margin: 6rem auto 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 1800px;
+        > div.page-2-h1 {
+            display: flex;
+            width: 40%;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        > div.page-2-input-wrapper-wrapper {
+            width: 50%;
+            > div {
+                margin: 0 auto 1rem;
+                display: flex;
+                align-items: center;
+                > img {
+                    width: 30%;
+                    height: 100%;
+                    margin: 0 1rem 0;
+                }
+                > img.link-img {
+                    width: 20%;
+                    height: 100%;
+                    margin: 0 1rem 0;
+                }
+                > input {
+                    width: 370%;
+                    height: 100%;
+                    background-color: #f8f9fa;
+                    border: none;
+                    color: orange;
+                    font-size: 19px;
+                }
+            }
+        }
+    }
     @media all and (max-width: 768px) { /* 화면이 768이하일 때 적용 될 스타일 */
         main {
+            min-width: 400px;
+        }
+        div.page-2-wrapper {
             min-width: 400px;
         }
     }
@@ -70,19 +125,31 @@ export const Main = styled.div`
         main {
             width: 788px;
         }
+        div.page-2-wrapper {
+            width: 788px;
+        }
     }
     @media all and (min-width: 1025px) and (max-width: 1326px) {
         main {
             width: 1024px;
-        }   
+        }
+        div.page-2-wrapper {
+            width: 1024px;
+        }
     }
     @media all and (min-width: 1327px) and (max-width: 1732px) {
         main {
             width: 1326px;
         }
+        div.page-2-wrapper {
+            width: 1326px;
+        }
     }
     @media all and (min-width: 1733px) {
         main {
+            width: 1732px;
+        }
+        div.page-2-wrapper {
             width: 1732px;
         }
     }
